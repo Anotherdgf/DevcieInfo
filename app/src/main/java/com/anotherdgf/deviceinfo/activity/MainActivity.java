@@ -1,8 +1,8 @@
 package com.anotherdgf.deviceinfo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.anotherdgf.deviceinfo.R;
 
@@ -21,8 +20,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         System.loadLibrary("native-lib");
     }
 
-
     private DrawerLayout drawer;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void initView(){
-        Toolbar toolbar =findViewById(R.id.toolbar_main);
+        toolbar =findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
@@ -46,25 +45,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
-        View headerView = navigationView.getHeaderView(0);
-        LinearLayout nav_header = headerView.findViewById(R.id.nav_header);
-        nav_header.setOnClickListener(this);
+//        View headerView = navigationView.getHeaderView(0);
+//        LinearLayout nav_header = headerView.findViewById(R.id.nav_header);
+//        nav_header.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view){
         switch (view.getId()){
-            case R.id.nav_header:
+           // case R.id.nav_header:
         }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        Intent intent = new Intent();
 
         switch (item.getItemId()) {
-
+            case R.id.nav_settings:
+                toolbar.setTitle(R.string.nav_settings);
+                break;
+            case R.id.nav_devices:
+                toolbar.setTitle(R.string.nav_devices);
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);

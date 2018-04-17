@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_devices"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/nav_devices" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/nav_settings" />
+    </group>
+
+    <group android:id="@+id/group_about">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/nav_about" />
+        <item
+            android:id="@+id/nav_donate"
+            android:icon="@drawable/ic_monetization_on_black_24dp"
+            android:title="@string/nav_donate" />
+    </group>
 </menu>
