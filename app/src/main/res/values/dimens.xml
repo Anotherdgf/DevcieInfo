@@ -42,4 +42,6 @@
     <dimen name="big_activity_text_margin">16dp</dimen>
 
     <dimen name="fragment_content_margin">5dp</dimen>
+
+    <dimen name="device_info_text_size">15sp</dimen>
 </resources>

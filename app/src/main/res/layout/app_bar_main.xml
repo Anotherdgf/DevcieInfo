@@ -23,10 +23,10 @@
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
-        android:id="@+id/device_info_main"
+        android:layout_marginTop="56dp"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent"
-        />
+        android:layout_height="566dp"
+        tools:layout_editor_absoluteY="40dp" />
 
 </android.support.design.widget.CoordinatorLayout>

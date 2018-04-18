@@ -3,7 +3,7 @@
 
     <group android:checkableBehavior="none">
         <item
-            android:id="@+id/nav_devices"
+            android:id="@+id/nav_deviceinfo"
             android:icon="@drawable/ic_info_black_24dp"
             android:title="@string/nav_devices" />
         <item

@@ -8,4 +8,10 @@
     <string name="nav_donate">Donate</string>
     <string name="title_activity_settings">Settings</string>
     <string name="nav_devices">Devices</string>
+
+    <string name="unknown">UNKNOWN</string>
+
+    <string name="info_manufacturer">Manufacturer</string>
+    <string name="info_Brand">Brand</string>
+    <string name="info_Serial_No">Serial No</string>
 </resources>

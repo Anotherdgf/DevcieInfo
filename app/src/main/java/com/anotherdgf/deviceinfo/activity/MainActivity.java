@@ -2,18 +2,18 @@ package com.anotherdgf.deviceinfo.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.anotherdgf.deviceinfo.R;
+import com.anotherdgf.deviceinfo.fragment.DeviceInfoFragment;
+import com.anotherdgf.deviceinfo.fragment.SettingsFragment;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
+public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(getContentViewId());
 
         initView();
+        initFragmentView();
     }
 
     private void initView(){
@@ -44,10 +45,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+    }
 
-//        View headerView = navigationView.getHeaderView(0);
-//        LinearLayout nav_header = headerView.findViewById(R.id.nav_header);
-//        nav_header.setOnClickListener(this);
+    private void initFragmentView(){
+        toolbar.setTitle(R.string.nav_devices);
+        addFragment(DeviceInfoFragment.newInstance());
     }
 
     @Override
@@ -64,9 +66,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_settings:
                 toolbar.setTitle(R.string.nav_settings);
+                addFragment(SettingsFragment.newInstance());
                 break;
-            case R.id.nav_devices:
+            case R.id.nav_deviceinfo:
                 toolbar.setTitle(R.string.nav_devices);
+                addFragment(DeviceInfoFragment.newInstance());
                 break;
         }
 
@@ -81,6 +85,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    protected int getContentViewId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected int getFragmentContentId() {
+        return R.id.fragment_container;
     }
 
     /**

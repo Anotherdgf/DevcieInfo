@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/fragment_content_margin"
+    android:paddingTop="@dimen/fragment_content_margin"
+    android:padding="@dimen/fragment_content_margin">
+
+    <LinearLayout
+        android:id="@+id/maunfacturer"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_manufacturer"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/maunfacturer_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/brand"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_Brand"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/brand_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/serialNo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_Serial_No"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/serialNo_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
