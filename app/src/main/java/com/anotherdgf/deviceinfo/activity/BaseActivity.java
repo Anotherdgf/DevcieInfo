@@ -22,7 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         if (null != fragment) {
             getSupportFragmentManager().beginTransaction()
                     .replace(getFragmentContentId(),fragment,fragment.getClass().getSimpleName())
-                    .addToBackStack(fragment.getClass().getSimpleName())
+//                    .addToBackStack(fragment.getClass().getSimpleName())
                     .commitAllowingStateLoss();
         }
     }

@@ -1,6 +1,8 @@
 package com.anotherdgf.deviceinfo.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -9,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anotherdgf.deviceinfo.R;
 import com.anotherdgf.deviceinfo.fragment.AboutMeFragment;
@@ -26,6 +29,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     static {
         System.loadLibrary("native-lib");
     }
+
+    private static boolean isExit = false; //标志是否退出
 
     private DrawerLayout drawer;
     private Toolbar toolbar;
@@ -112,6 +117,15 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         return true;
     }
 
+    private static Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            isExit = false;
+        }
+    };
+
     @Override
     public void onPause(){
         super.onPause();
@@ -122,7 +136,18 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            exit();
+//            super.onBackPressed();
+        }
+    }
+
+    private void exit() {
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(this, "再按一次后退键退出程序", Toast.LENGTH_SHORT).show();
+            mHandler.sendEmptyMessageDelayed(0, 2000);  // 利用handler延迟发送更改状态信息
+        } else {
+            this.finish();
         }
     }
 
