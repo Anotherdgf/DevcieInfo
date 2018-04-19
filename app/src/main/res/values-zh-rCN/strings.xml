@@ -3,8 +3,11 @@
     <string name="app_name">我的设备</string>
     <string name="navigation_drawer_open">打开导航抽屉</string>
     <string name="navigation_drawer_close">关闭导航抽屉</string>
-    <string name="nav_header_text">Product Name</string>
+    <string name="nav_header_text">设备名称</string>
+    <string name="nav_user_apps">用户应用</string>
+    <string name="nav_sys_apps">系统应用</string>
     <string name="nav_settings">设置</string>
+    <string name="nav_demo_dialogs">对话框</string>
     <string name="nav_about">关于我</string>
     <string name="nav_donate">捐赠</string>
     <string name="title_activity_settings">设置</string>

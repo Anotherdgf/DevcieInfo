@@ -4,12 +4,30 @@
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/nav_deviceinfo"
-            android:icon="@drawable/ic_info_black_24dp"
+            android:icon="@drawable/ic_device_home"
             android:title="@string/nav_devices" />
+        <item
+            android:id="@+id/nav_user_apps"
+            android:icon="@drawable/ic_user_apps"
+            android:title="@string/nav_user_apps" />
+
+        <item
+            android:id="@+id/nav_sys_apps"
+            android:icon="@drawable/ic_sys_apps"
+            android:title="@string/nav_sys_apps" />
+
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/nav_settings" />
+    </group>
+
+    <group android:id="@+id/group_demos">
+        <item
+            android:id="@+id/demo_dialogs"
+            android:icon="@drawable/ic_widgets_dialogs"
+            android:title="@string/nav_demo_dialogs" />
+
     </group>
 
     <group android:id="@+id/group_about">

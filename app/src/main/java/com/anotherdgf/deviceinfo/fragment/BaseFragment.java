@@ -50,4 +50,8 @@ public abstract class BaseFragment extends Fragment{
         return view;
     }
 
+    @Override
+    public void onPause(){
+        super.onPause();
+    }
 }

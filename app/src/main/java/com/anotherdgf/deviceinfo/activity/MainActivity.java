@@ -11,8 +11,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.anotherdgf.deviceinfo.R;
+import com.anotherdgf.deviceinfo.fragment.AboutMeFragment;
 import com.anotherdgf.deviceinfo.fragment.DeviceInfoFragment;
+import com.anotherdgf.deviceinfo.fragment.DialogsFragment;
+import com.anotherdgf.deviceinfo.fragment.DonateMeFragment;
 import com.anotherdgf.deviceinfo.fragment.SettingsFragment;
+import com.anotherdgf.deviceinfo.fragment.SysAppsFragment;
+import com.anotherdgf.deviceinfo.fragment.UserAppsFragment;
 import com.anotherdgf.deviceinfo.utils.SystemUtils;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
@@ -81,10 +86,35 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 toolbar.setTitle(R.string.nav_devices);
                 addFragment(DeviceInfoFragment.newInstance());
                 break;
+            case R.id.nav_user_apps:
+                toolbar.setTitle(R.string.nav_user_apps);
+                addFragment(UserAppsFragment.newInstance());
+                break;
+            case R.id.nav_sys_apps:
+                toolbar.setTitle(R.string.nav_sys_apps);
+                addFragment(SysAppsFragment.newInstance());
+                break;
+            case R.id.nav_about:
+                toolbar.setTitle(R.string.nav_about);
+                addFragment(AboutMeFragment.newInstance());
+                break;
+            case R.id.nav_donate:
+                toolbar.setTitle(R.string.nav_donate);
+                addFragment(DonateMeFragment.newInstance());
+                break;
+            case R.id.demo_dialogs:
+                toolbar.setTitle(R.string.nav_demo_dialogs);
+                addFragment(DialogsFragment.newInstance());
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
     }
 
     @Override
