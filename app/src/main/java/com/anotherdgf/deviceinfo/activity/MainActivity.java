@@ -8,10 +8,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.anotherdgf.deviceinfo.R;
 import com.anotherdgf.deviceinfo.fragment.DeviceInfoFragment;
 import com.anotherdgf.deviceinfo.fragment.SettingsFragment;
+import com.anotherdgf.deviceinfo.utils.SystemUtils;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
 
@@ -22,6 +24,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     private DrawerLayout drawer;
     private Toolbar toolbar;
+    private TextView tv_nav_header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+
+        View headerView = navigationView.getHeaderView(0);
+        tv_nav_header = headerView.findViewById(R.id.text_nav_header);
+        if (null != SystemUtils.getSystemModel()){
+            tv_nav_header.setText(SystemUtils.getSystemModel());
+        }
     }
 
     private void initFragmentView(){

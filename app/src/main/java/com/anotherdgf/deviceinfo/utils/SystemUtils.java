@@ -2,23 +2,11 @@ package com.anotherdgf.deviceinfo.utils;
 
 import android.os.Build;
 
-import java.security.Security;
-import java.util.Locale;
-
 /**
  * Created by denggaofeng on 2018/4/18.
  */
 
 public class SystemUtils {
-
-    /**
-    * 获取系统当前语言
-    * @return 系统当前语言
-    * Created at 2018/4/18 16:18 by dgf
-    */
-    public static String getSystemLanguage(){
-        return Locale.getDefault().getLanguage();
-    }
 
     /**
     * 获取当前手机系统版本号
@@ -48,15 +36,37 @@ public class SystemUtils {
     }
 
     /**
-    * 获取IMEI信息
-    * @return IMEI信息
-    * Created at 2018/4/18 16:27 by dgf
+    * 获取设备序列号
+    * @return 设备序列号
+    * Created at 2018/4/19 13:58 by dgf
     */
-//    public static String getIMEI(Context context){
-//        TelephonyManager tm = (TelephonyManager) context.getSystemService(Activity.TELEPHONY_SERVICE);
-//        if(null != tm){
-//            return tm.getDeviceId();
-//        }
-//        return null;
-//    }
+    public static String getSerialNo(){
+        return Build.SERIAL;
+    }
+
+    /**
+    * 
+    * @return 
+    * Created at 2018/4/19 14:02 by dgf
+    */
+    public static String getBuildHost(){
+        return Build.HOST;
+    }
+
+    public static String getBuildUser(){
+        return Build.USER;
+    }
+
+    public static String getBuildBoard(){
+        return Build.BOARD;
+    }
+
+    public static String getBuildId(){
+        return Build.ID;
+    }
+
+    public static String getBootloader(){
+        return Build.BOOTLOADER;
+    }
+
 }

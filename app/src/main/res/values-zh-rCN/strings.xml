@@ -15,4 +15,11 @@
     <string name="info_manufacturer">生产厂家</string>
     <string name="info_Brand">品牌</string>
     <string name="info_Serial_No">序列号</string>
+    <string name="info_locale">语言</string>
+    <string name="info_model">机型</string>
+    <string name="info_androidId">安卓ID</string>
+    <string name="info_board">主板</string>
+    <string name="info_bootloader">引导程序</string>
+    <string name="info_user">用户</string>
+    <string name="info_host">编译主机</string>
 </resources>

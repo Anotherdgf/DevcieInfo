@@ -28,7 +28,7 @@
             android:layout_weight="1"
             android:textSize="@dimen/device_info_text_size"
             android:textColor="@color/app_green"
-            android:text="@string/app_name"
+            android:text="@string/unknown"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -59,7 +59,39 @@
             android:layout_weight="1"
             android:textSize="@dimen/device_info_text_size"
             android:textColor="@color/app_green"
-            android:text="@string/app_name"
+            android:text="@string/unknown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/model"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_model"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/model_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/unknown"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -90,8 +122,134 @@
             android:layout_weight="1"
             android:textSize="@dimen/device_info_text_size"
             android:textColor="@color/app_green"
-            android:text="@string/app_name"
+            android:text="@string/unknown"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/androidId"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_androidId"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/androidId_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/unknown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/board"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_board"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/board_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/unknown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/user"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_user"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/user_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/unknown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/host"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_host"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/host_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/unknown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
 </LinearLayout>
