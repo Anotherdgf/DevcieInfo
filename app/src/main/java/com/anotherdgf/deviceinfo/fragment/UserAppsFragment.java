@@ -1,7 +1,6 @@
 package com.anotherdgf.deviceinfo.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -37,8 +36,8 @@ public class UserAppsFragment extends BaseFragment implements OnItemClickListene
 
         mUserApplications = applicationUtils.getAllApps(false);
 
-        ApplicationAdapter mAdapter = new ApplicationAdapter(getContext(),mUserApplications);
-        userAppsListView.setAdapter(mAdapter);
+        ApplicationAdapter mUserAdapter = new ApplicationAdapter(getContext(),mUserApplications);
+        userAppsListView.setAdapter(mUserAdapter);
         userAppsListView.setOnItemClickListener(this);
 
     }

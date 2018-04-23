@@ -31,14 +31,14 @@ public abstract class BaseFragment extends Fragment{
         this.mActivity = (BaseActivity)activity;
     }
 
-    //添加fragment
+    //add fragment
     protected void addFragment(BaseFragment fragment){
         if (null != fragment){
             getHoldingActivity().addFragment(fragment);
         }
     }
 
-    //移除fragment
+    //remove fragment
     protected void removeFragment(){
         getHoldingActivity().removeFragment();
     }
