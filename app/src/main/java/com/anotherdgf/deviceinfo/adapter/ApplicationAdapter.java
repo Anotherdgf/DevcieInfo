@@ -63,6 +63,7 @@ public class ApplicationAdapter extends BaseAdapter{
         viewHolder.iv_apkIcon.setImageDrawable(mApplicationList.get(position).getApkIcon());
         viewHolder.tv_appName.setText(mApplicationList.get(position).getAppName());
         viewHolder.tv_applicationName.setText(mApplicationList.get(position).getPackageName());
+        viewHolder.iv_app_open.setImageResource(R.drawable.ic_exit_to_app);
         return convertView;
     }
 

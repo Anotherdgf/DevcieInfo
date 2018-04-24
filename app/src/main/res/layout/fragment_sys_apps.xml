@@ -7,5 +7,6 @@
         android:id="@+id/sys_apps_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/fragment_content_margin"/>
+        android:divider="@color/main_background"
+        android:dividerHeight="10dp"/>
 </android.support.constraint.ConstraintLayout>
