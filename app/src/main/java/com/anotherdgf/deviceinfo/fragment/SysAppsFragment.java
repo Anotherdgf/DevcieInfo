@@ -2,8 +2,6 @@ package com.anotherdgf.deviceinfo.fragment;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.anotherdgf.deviceinfo.R;
@@ -17,7 +15,7 @@ import java.util.ArrayList;
  * Created by denggaofeng on 2018/4/19.
  */
 
-public class SysAppsFragment extends BaseFragment implements OnItemClickListener {
+public class SysAppsFragment extends BaseFragment{
 
     private final static String TAG = "SysAppsFragment";
     private ListView sysAppsListView;
@@ -37,12 +35,6 @@ public class SysAppsFragment extends BaseFragment implements OnItemClickListener
 
         ApplicationAdapter mSysAdapter = new ApplicationAdapter(getContext(),mSysApplications);
         sysAppsListView.setAdapter(mSysAdapter);
-        sysAppsListView.setOnItemClickListener(this);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent,View view,int position,long id){
-
     }
 
     @Override

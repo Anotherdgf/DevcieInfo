@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Created by denggaofeng on 2018/4/19.
  */
 
-public class UserAppsFragment extends BaseFragment implements OnItemClickListener {
+public class UserAppsFragment extends BaseFragment {
 
     private final static String TAG = "UserAppsFragment";
 
@@ -38,12 +38,6 @@ public class UserAppsFragment extends BaseFragment implements OnItemClickListene
 
         ApplicationAdapter mUserAdapter = new ApplicationAdapter(getContext(),mUserApplications);
         userAppsListView.setAdapter(mUserAdapter);
-        userAppsListView.setOnItemClickListener(this);
-
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent,View view,int position,long id){
 
     }
 

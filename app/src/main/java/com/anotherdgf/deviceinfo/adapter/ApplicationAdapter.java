@@ -1,6 +1,9 @@
 package com.anotherdgf.deviceinfo.adapter;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anotherdgf.deviceinfo.R;
 import com.anotherdgf.deviceinfo.bean.ApplicationBean;
@@ -47,7 +51,7 @@ public class ApplicationAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         Log.d(TAG,"position"+position);
         if (null == convertView){
             viewHolder = new ViewHolder();
@@ -64,6 +68,17 @@ public class ApplicationAdapter extends BaseAdapter{
         viewHolder.tv_appName.setText(mApplicationList.get(position).getAppName());
         viewHolder.tv_applicationName.setText(mApplicationList.get(position).getPackageName());
         viewHolder.iv_app_open.setImageResource(R.drawable.ic_exit_to_app);
+        viewHolder.iv_app_open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = mContext.getPackageManager().getLaunchIntentForPackage(viewHolder.tv_applicationName.getText().toString());
+                try{
+                    mContext.startActivity(intent);
+                }catch (ActivityNotFoundException e){
+                    Toast.makeText(mContext,"Package not found!",Toast.LENGTH_SHORT);
+                }
+            }
+        });
         return convertView;
     }
 
