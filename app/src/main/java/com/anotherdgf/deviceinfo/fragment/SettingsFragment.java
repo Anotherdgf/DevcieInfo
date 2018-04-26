@@ -1,7 +1,7 @@
 package com.anotherdgf.deviceinfo.fragment;
 
 import android.os.Bundle;
-import android.view.View;
+import android.preference.PreferenceFragment;
 
 import com.anotherdgf.deviceinfo.R;
 
@@ -9,7 +9,7 @@ import com.anotherdgf.deviceinfo.R;
  * Created by DGF on 2018/4/17.
  */
 
-public class SettingsFragment extends BaseFragment{
+public class SettingsFragment extends PreferenceFragment{
 
     private final static String TAG = "SettingsFragment";
 
@@ -18,11 +18,10 @@ public class SettingsFragment extends BaseFragment{
     }
 
     @Override
-    protected void initView(View view, Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        addPreferencesFromResource(R.xml.settings_main_pref);
     }
 
-    @Override
-    protected int getLayoutId(){
-        return R.layout.fragment_settings;
-    }
 }
