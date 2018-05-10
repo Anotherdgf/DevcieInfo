@@ -3,6 +3,8 @@
     package="com.anotherdgf.deviceinfo">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
 
     <application
         android:allowBackup="true"
@@ -23,6 +25,28 @@
         <activity
             android:name=".activity.SettingsActivity"
             android:label="@string/title_activity_settings"/>
+
+        <!-- 辅助服务 -->
+        <service
+            android:name=".service.CurrentActivityService"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility"/>
+        </service>
+
+        <!-- 辅助服务广播接收器 -->
+        <receiver android:name=".receiver.CurrentActivityServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SWITCH" />
+                <action android:name="android.intent.action.CLOSE" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
