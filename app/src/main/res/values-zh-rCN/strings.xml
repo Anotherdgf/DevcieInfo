@@ -12,6 +12,7 @@
     <string name="nav_donate">捐赠</string>
     <string name="title_activity_settings">设置</string>
     <string name="nav_devices">我的设备</string>
+    <string name="nav_battery">电池</string>
 
     <string name="unknown">未知</string>
 

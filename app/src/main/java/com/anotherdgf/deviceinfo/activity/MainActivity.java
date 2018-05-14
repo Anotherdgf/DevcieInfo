@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.anotherdgf.deviceinfo.R;
 import com.anotherdgf.deviceinfo.fragment.AboutMeFragment;
+import com.anotherdgf.deviceinfo.fragment.BaseFragment;
+import com.anotherdgf.deviceinfo.fragment.BatteryFragment;
 import com.anotherdgf.deviceinfo.fragment.DeviceInfoFragment;
 import com.anotherdgf.deviceinfo.fragment.DialogsFragment;
 import com.anotherdgf.deviceinfo.fragment.DonateMeFragment;
@@ -106,6 +108,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.nav_sys_apps:
                 toolbar.setTitle(R.string.nav_sys_apps);
                 addFragment(SysAppsFragment.newInstance());
+                break;
+            case R.id.nav_battery:
+                toolbar.setTitle(R.string.nav_battery);
+                addFragment(BatteryFragment.newInstance());
                 break;
             case R.id.nav_about:
                 toolbar.setTitle(R.string.nav_about);

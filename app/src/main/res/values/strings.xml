@@ -11,6 +11,7 @@
     <string name="nav_donate">Donate</string>
     <string name="title_activity_settings">Settings</string>
     <string name="nav_devices">Devices</string>
+    <string name="nav_battery">Battery</string>
 
     <string name="unknown">UNKNOWN</string>
 
