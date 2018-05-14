@@ -24,6 +24,7 @@ import com.anotherdgf.deviceinfo.fragment.DonateMeFragment;
 import com.anotherdgf.deviceinfo.fragment.SysAppsFragment;
 import com.anotherdgf.deviceinfo.fragment.UserAppsFragment;
 import com.anotherdgf.deviceinfo.service.CurrentActivityService;
+import com.anotherdgf.deviceinfo.service.MovementStateService;
 import com.anotherdgf.deviceinfo.utils.DialogUtil;
 import com.anotherdgf.deviceinfo.utils.PermissionUtils;
 import com.anotherdgf.deviceinfo.utils.SystemUtils;
@@ -41,6 +42,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private Toolbar toolbar;
     private TextView tv_nav_header;
 
+    private Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         if (!PermissionUtils.hasOverlayPermission(this)) {
             DialogUtil.showOverlayAlertDialog(this);
         }
+
+        //开启服务
+        intent = new Intent(this, MovementStateService.class);
+        startService(intent);
     }
 
     private void initView(){
@@ -173,6 +180,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     protected int getFragmentContentId() {
         return R.id.fragment_container;
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        stopService(intent);
     }
 
     /**

@@ -41,6 +41,10 @@
                 android:resource="@xml/accessibility"/>
         </service>
 
+        <service android:name=".service.MovementStateService"
+            android:enabled="true"
+            android:exported="true"/>
+
         <!-- 辅助服务广播接收器 -->
         <receiver android:name=".receiver.CurrentActivityServiceReceiver">
             <intent-filter>
