@@ -42,6 +42,10 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         editor = prefs.edit();
         isChecked = prefs.getBoolean("current_switch", false);
 
+        if (!PermissionUtils.getServiceState(getActivity(), CurrentActivityService.SERVICE_NAME)){
+            isChecked = false;
+        }
+
         mSwitchPreference = (SwitchPreference)findPreference(KEY_CURRENT_ACTIVITY);
         mSwitchPreference.setChecked(isChecked);
         mSwitchPreference.setOnPreferenceClickListener(this);
