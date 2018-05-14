@@ -21,6 +21,9 @@ import com.anotherdgf.deviceinfo.fragment.DialogsFragment;
 import com.anotherdgf.deviceinfo.fragment.DonateMeFragment;
 import com.anotherdgf.deviceinfo.fragment.SysAppsFragment;
 import com.anotherdgf.deviceinfo.fragment.UserAppsFragment;
+import com.anotherdgf.deviceinfo.service.CurrentActivityService;
+import com.anotherdgf.deviceinfo.utils.DialogUtil;
+import com.anotherdgf.deviceinfo.utils.PermissionUtils;
 import com.anotherdgf.deviceinfo.utils.SystemUtils;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
@@ -43,6 +46,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         initView();
         initFragmentView();
+
+        //悬浮窗权限检查，没有给出弹窗提醒
+        if (!PermissionUtils.hasOverlayPermission(this)) {
+            DialogUtil.showOverlayAlertDialog(this);
+        }
     }
 
     private void initView(){

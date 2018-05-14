@@ -65,10 +65,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     }
 
     private void initCurrentActivity(){
-        //悬浮窗权限检查，没有给出弹窗提醒
-        if (!PermissionUtils.hasOverlayPermission(getActivity())) {
-            DialogUtil.showOverlayAlertDialog(getActivity());
-        }
+
         // 检查用户是否已授权开启"辅助功能"
         if (!PermissionUtils.getServiceState(getActivity(), CurrentActivityService.SERVICE_NAME)) {
             DialogUtil.showAccessibilityServiceAlertDialog(getActivity(), getString(R.string.accessibilityService_msg), getString(R.string.cancle), getString(R.string.confirm));
