@@ -53,11 +53,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
-        // TODO Auto-generated method stub
         if (preference.getKey().equals(KEY_CURRENT_ACTIVITY)){
             isChecked = !isChecked;
             if (isChecked){
-                //TODO 权限检查，辅助权限开启
                 initCurrentActivity();
                 // 切换视图显示状态
                 WindowViewContainer.getInstance(getActivity()).switchWindowView();

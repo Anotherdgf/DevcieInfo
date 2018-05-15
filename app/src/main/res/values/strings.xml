@@ -28,20 +28,21 @@
 
     <string name="current_activity">Current Activity</string>
     <string name="current_activity_summary">Show Current Activity name</string>
-
+    <string name="movement_title">Long Seat Notify</string>
+    <string name="movement_summary">One Hour Notify</string>
     <string name="cancle">Cancle</string>
     <string name="confirm">Confim</string>
     <string name="accessibilityService_msg">[Open the suspended window]Need to go to [accessibility] to open</string>
 
-    <string name="permission_get_accounts_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_GET_ACCOUNTS</string>
-    <string name="permission_read_phone_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_READ_PHONE_STATE</string>
-    <string name="permission_call_phone_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_CALL_PHONE</string>
-    <string name="permission_camera_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_CAMERA</string>
-    <string name="permission_access_fine_location_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_ACCESS_FINE_LOCATION</string>
-    <string name="permission_access_coarse_location_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_ACCESS_COARSE_LOCATION</string>
-    <string name="permission_read_external_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_READ_EXTERNAL_STORAGE</string>
-    <string name="permission_white_external_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_WRITE_EXTERNAL_STORAGE</string>
-    <string name="permission_recode_audio_hint">没有此权限，无法开启这个功能，请开启权限。PERMISSION_RECORD_AUDIO</string>
+    <string name="permission_get_accounts_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_GET_ACCOUNTS</string>
+    <string name="permission_read_phone_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_READ_PHONE_STATE</string>
+    <string name="permission_call_phone_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_CALL_PHONE</string>
+    <string name="permission_camera_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_CAMERA</string>
+    <string name="permission_access_fine_location_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_ACCESS_FINE_LOCATION</string>
+    <string name="permission_access_coarse_location_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_ACCESS_COARSE_LOCATION</string>
+    <string name="permission_read_external_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_READ_EXTERNAL_STORAGE</string>
+    <string name="permission_white_external_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_WRITE_EXTERNAL_STORAGE</string>
+    <string name="permission_recode_audio_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_RECORD_AUDIO</string>
 
-    <string name="service_description">点击右上角开关按钮可开启辅助功能\n\n(显示当前活动窗口包名和Activity类名)</string>
+    <string name="service_description">Click the switch button in the upper right corner to open the auxiliary function\n\n(Display the current active window package name and Activity class name)</string>
 </resources>
