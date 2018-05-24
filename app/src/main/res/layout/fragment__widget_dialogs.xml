@@ -2,43 +2,63 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="20dp"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/left_button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="120dip"
-            android:layout_weight="0.4"
             android:layout_height="36dp"
-            android:text="@string/cancel"
             android:layout_gravity="center_vertical"
-            android:textColor="#349BA4"
+            android:layout_weight="0.4"
             android:background="@drawable/shape_button_background"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:text="@string/cancel"
+            android:textColor="#349BA4" />
         <!-- Spacer -->
         <View
             android:id="@+id/buttons_spacer_left"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:visibility="invisible" />
+
         <Button
             android:id="@+id/right_button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="120dip"
-            android:text="@string/confirm"
-            android:layout_weight="0.4"
             android:layout_height="36dp"
             android:layout_gravity="center_vertical"
-            android:textColor="#349BA4"
+            android:layout_weight="0.4"
             android:background="@drawable/shape_button_background"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:text="@string/confirm"
+            android:textColor="#349BA4" />
     </LinearLayout>
 
+    <View android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/gray_light"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="20dp">
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+        <View android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@color/gray_light"/>
 </LinearLayout>

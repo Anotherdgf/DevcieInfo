@@ -129,7 +129,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 addFragment(DonateMeFragment.newInstance());
                 break;
             case R.id.demo_dialogs:
-                toolbar.setTitle(R.string.nav_demo_dialogs);
+                toolbar.setTitle(R.string.nav_demo_widget);
                 addFragment(DialogsFragment.newInstance());
                 break;
         }

@@ -7,7 +7,7 @@
     <string name="nav_user_apps">用户应用</string>
     <string name="nav_sys_apps">系统应用</string>
     <string name="nav_settings">设置</string>
-    <string name="nav_demo_dialogs">对话框</string>
+    <string name="nav_demo_widget">小组件</string>
     <string name="nav_about">关于我</string>
     <string name="nav_donate">捐赠</string>
     <string name="title_activity_settings">设置</string>
