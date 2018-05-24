@@ -30,7 +30,7 @@
     <string name="current_activity_summary">Show Current Activity name</string>
     <string name="movement_title">Long Seat Notify</string>
     <string name="movement_summary">One Hour Notify</string>
-    <string name="cancle">Cancle</string>
+    <string name="cancel">Cancle</string>
     <string name="confirm">Confim</string>
     <string name="accessibilityService_msg">[Open the suspended window]Need to go to [accessibility] to open</string>
 

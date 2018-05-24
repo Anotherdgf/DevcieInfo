@@ -31,7 +31,7 @@
     <string name="current_activity_summary">展示当前Activity名</string>
     <string name="movement_title">久坐提醒</string>
     <string name="movement_summary">久坐一小时提醒</string>
-    <string name="cancle">取消</string>
+    <string name="cancel">取消</string>
     <string name="confirm">确定</string>
     <string name="accessibilityService_msg">【打开悬浮窗】需要去【辅助功能】开启</string>
 
