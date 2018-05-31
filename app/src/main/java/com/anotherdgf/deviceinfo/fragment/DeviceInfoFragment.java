@@ -2,6 +2,7 @@ package com.anotherdgf.deviceinfo.fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.anotherdgf.deviceinfo.R;
@@ -27,6 +28,7 @@ public class DeviceInfoFragment extends BaseFragment {
     private TextView tv_board;
     private TextView tv_user;
     private TextView tv_host;
+    private TextView tv_screen;
 
     @Override
     protected void initView(View view, Bundle savedInstanceState){
@@ -38,6 +40,7 @@ public class DeviceInfoFragment extends BaseFragment {
         tv_board = view.findViewById(R.id.board_value);
         tv_user = view.findViewById(R.id.user_value);
         tv_host = view.findViewById(R.id.host_value);
+        tv_screen = view.findViewById(R.id.screen_value);
 
         presentValues();
 
@@ -67,6 +70,22 @@ public class DeviceInfoFragment extends BaseFragment {
         }
         if (null != SystemUtils.getBuildUser()){
             tv_user.setText(SystemUtils.getBuildUser());
+        }
+        /*获取屏幕分辨率*/
+        if (null != getScreenResolution()){
+            tv_screen.setText(getScreenResolution());
+        }
+
+    }
+
+    public String getScreenResolution(){
+        WindowManager wm = getActivity().getWindowManager();
+        if (null != wm){
+            int width = wm.getDefaultDisplay().getWidth();
+            int height = wm.getDefaultDisplay().getHeight();
+            return width + "*" +height +" Pixels";
+        }else {
+            return null;
         }
     }
 

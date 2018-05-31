@@ -41,7 +41,7 @@ public class CustomDialog extends DialogFragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        rootView = inflater.inflate(R.layout.lay_custom_dialog, container, false);
+        rootView = inflater.inflate(R.layout.custom_two_button_dialog, container, false);
         init();
         initView();
         initData();

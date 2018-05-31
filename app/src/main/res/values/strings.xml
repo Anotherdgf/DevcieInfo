@@ -25,6 +25,7 @@
     <string name="info_bootloader">Bootloader</string>
     <string name="info_user">User</string>
     <string name="info_host">Host</string>
+    <string name="info_screen">Screen Resolution</string>
 
     <string name="current_activity">Current Activity</string>
     <string name="current_activity_summary">Show Current Activity name</string>

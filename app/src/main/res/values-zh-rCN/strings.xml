@@ -26,6 +26,7 @@
     <string name="info_bootloader">引导程序</string>
     <string name="info_user">用户</string>
     <string name="info_host">编译主机</string>
+    <string name="info_screen">屏幕分辨率</string>
 
     <string name="current_activity">当前Activity</string>
     <string name="current_activity_summary">展示当前Activity名</string>

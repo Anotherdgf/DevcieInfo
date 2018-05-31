@@ -251,5 +251,35 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="700dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_light" />
+
+    <LinearLayout
+        android:id="@+id/screen"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/fragment_content_margin"
+        android:paddingTop="@dimen/fragment_content_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="@string/info_screen"
+            android:textSize="@dimen/device_info_text_size"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/screen_value"
+            android:layout_weight="1"
+            android:textSize="@dimen/device_info_text_size"
+            android:textColor="@color/app_green"
+            android:text="@string/unknown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
 </LinearLayout>

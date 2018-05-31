@@ -2,6 +2,7 @@ package com.anotherdgf.deviceinfo.fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.anotherdgf.deviceinfo.R;
 
