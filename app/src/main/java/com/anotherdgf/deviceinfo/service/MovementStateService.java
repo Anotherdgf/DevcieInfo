@@ -1,16 +1,23 @@
 package com.anotherdgf.deviceinfo.service;
 
+import android.app.AlertDialog;
 import android.app.Service;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
+import android.os.Vibrator;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.WindowManager;
 
 import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.anotherdgf.deviceinfo.constant.LOG_ENABLE;
 
@@ -21,6 +28,8 @@ import static com.anotherdgf.deviceinfo.constant.LOG_ENABLE;
 public class MovementStateService extends Service implements SensorEventListener {
 
     private final static String TAG = "MovementStateService";
+    private final int MOVE = 101;
+    private final int STATE_CHANGED = 102;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
@@ -31,6 +40,13 @@ public class MovementStateService extends Service implements SensorEventListener
 
     private Calendar mCalendar;
     private long lastTimeStamp = 0;
+
+    //定时任务计时器
+    private Timer mTimer;
+    private TimerTask mTimerTask;
+    private Handler handler;
+    private AlertDialog dialog;
+    private Vibrator vibrator;
 
     @Override
     public IBinder onBind(Intent intent){
@@ -47,6 +63,76 @@ public class MovementStateService extends Service implements SensorEventListener
             mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
+
+        vibrator = (Vibrator)getSystemService(Service.VIBRATOR_SERVICE);
+
+        //定时器任务
+        handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg){
+                switch (msg.what){
+                    case MOVE:
+                        //震动dialog
+                        vibrator.vibrate(1000);
+                        showDialog();
+                        break;
+                    case STATE_CHANGED:
+                        //改变计时器状态
+                        stopTimer();
+                        initTimer();
+                        break;
+                }
+            }
+        };
+
+        initTimer();
+    }
+
+    private void initTimer(){
+        if (null == mTimer){
+            mTimer = new Timer();
+        }
+        if (null == mTimerTask){
+            mTimerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    Message message = new Message();
+                    message.what = MOVE;
+                    message.obj = System.currentTimeMillis();
+                    handler.sendMessage(message);
+                }
+            };
+        }
+        if (null != mTimerTask && null != mTimer){
+            mTimer.schedule(mTimerTask,5000,5000);
+        }
+    }
+
+    private void stopTimer(){
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
+        if (mTimerTask != null) {
+            mTimerTask.cancel();
+            mTimerTask = null;
+        }
+    }
+
+    private void showDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("您久坐超过一小时，请活动一下");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialog.dismiss();
+            }
+        });
+        dialog = builder.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.setCancelable(false);
+        dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+        dialog.show();
     }
 
     @Override
@@ -56,6 +142,9 @@ public class MovementStateService extends Service implements SensorEventListener
             mSensorManager.unregisterListener(this);
             mSensorManager = null;
         }
+        //暂停定时任务
+        mTimer.cancel();
+        mTimerTask.cancel();
     }
 
     @Override
@@ -92,7 +181,10 @@ public class MovementStateService extends Service implements SensorEventListener
             if (maxValue > 2 && (stamp - lastTimeStamp) > 30) {
                 lastTimeStamp = stamp;
                 if (LOG_ENABLE)Log.d(TAG, " sensor is moved or changed...");
-                Toast.makeText(this,"运动中",Toast.LENGTH_SHORT).show();
+                Message message = new Message();
+                message.what = STATE_CHANGED;
+                message.obj = System.currentTimeMillis();
+                handler.sendMessage(message);
             }
 
             posX = x;

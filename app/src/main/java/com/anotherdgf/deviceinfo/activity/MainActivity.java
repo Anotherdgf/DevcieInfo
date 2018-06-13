@@ -57,9 +57,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             DialogUtil.showOverlayAlertDialog(this);
         }
 
-        //开启服务
-        intent = new Intent(this, MovementStateService.class);
-        startService(intent);
     }
 
     private void initView(){

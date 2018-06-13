@@ -1,14 +1,17 @@
 package com.anotherdgf.deviceinfo.fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
+import android.util.Log;
 
 import com.anotherdgf.deviceinfo.R;
 import com.anotherdgf.deviceinfo.service.CurrentActivityService;
+import com.anotherdgf.deviceinfo.service.MovementStateService;
 import com.anotherdgf.deviceinfo.utils.DialogUtil;
 import com.anotherdgf.deviceinfo.utils.PermissionUtils;
 import com.anotherdgf.deviceinfo.window.WindowViewContainer;
@@ -22,11 +25,15 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private final static String TAG = "SettingsFragment";
 
     private static final String KEY_CURRENT_ACTIVITY = "current_activity";
+    private static final String KEY_MOVEMENT_SERVICE = "movement_pref";
 
     private SharedPreferences prefs;
     private SwitchPreference mSwitchPreference;
+    private SwitchPreference movePreference;
     private SharedPreferences.Editor editor;
     private boolean isChecked;
+    private boolean isMoveOpen;
+    private Intent intent;
 
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
@@ -49,6 +56,13 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         mSwitchPreference = (SwitchPreference)findPreference(KEY_CURRENT_ACTIVITY);
         mSwitchPreference.setChecked(isChecked);
         mSwitchPreference.setOnPreferenceClickListener(this);
+
+        //久坐提醒服务
+        isMoveOpen = prefs.getBoolean("isMoveOpend",false);
+        movePreference = (SwitchPreference)findPreference(KEY_MOVEMENT_SERVICE);
+        movePreference.setChecked(isMoveOpen);
+        movePreference.setOnPreferenceClickListener(this);
+        intent = new Intent(getActivity(), MovementStateService.class);
     }
 
     @Override
@@ -61,6 +75,15 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
                 WindowViewContainer.getInstance(getActivity()).switchWindowView();
             }else {
                 WindowViewContainer.getInstance(getActivity()).switchWindowView();
+            }
+        }else if (preference.getKey().equals(KEY_MOVEMENT_SERVICE)){
+            isMoveOpen = !isMoveOpen;
+            if (isMoveOpen){
+                //开启服务
+                getActivity().startService(intent);
+            }else {
+                //关闭服务
+                getActivity().stopService(intent);
             }
         }
         return false;
@@ -79,6 +102,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     public void onStop(){
         super.onStop();
         editor.putBoolean("current_switch",isChecked);
+        editor.putBoolean("isMoveOpend",isMoveOpen);
         editor.commit();
     }
 
