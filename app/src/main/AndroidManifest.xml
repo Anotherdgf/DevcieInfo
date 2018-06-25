@@ -15,9 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <!--<meta-data-->
-            <!--android:name="com.amap.api.v2.apikey"-->
-            <!--android:value="2d7cae2fc4662a8fc5a79639a64bebe1"/>-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="2d7cae2fc4662a8fc5a79639a64bebe1"/>
         <activity android:name=".activity.SplashActivity"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
@@ -32,6 +32,22 @@
         <activity
             android:name=".activity.SettingsActivity"
             android:label="@string/title_activity_settings"/>
+
+        <activity
+            android:name=".activity.DialogsActivity"
+            android:label="@string/dialog_widgets">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.RecyclerViewActivity"
+            android:label="@string/recyclerview_widgets">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!-- 辅助服务 -->
         <service

@@ -16,15 +16,12 @@ import android.widget.Toast;
 
 import com.anotherdgf.deviceinfo.R;
 import com.anotherdgf.deviceinfo.fragment.AboutMeFragment;
-import com.anotherdgf.deviceinfo.fragment.BaseFragment;
 import com.anotherdgf.deviceinfo.fragment.BatteryFragment;
 import com.anotherdgf.deviceinfo.fragment.DeviceInfoFragment;
-import com.anotherdgf.deviceinfo.fragment.DialogsFragment;
+import com.anotherdgf.deviceinfo.fragment.WidgetsFragment;
 import com.anotherdgf.deviceinfo.fragment.DonateMeFragment;
 import com.anotherdgf.deviceinfo.fragment.SysAppsFragment;
 import com.anotherdgf.deviceinfo.fragment.UserAppsFragment;
-import com.anotherdgf.deviceinfo.service.CurrentActivityService;
-import com.anotherdgf.deviceinfo.service.MovementStateService;
 import com.anotherdgf.deviceinfo.utils.DialogUtil;
 import com.anotherdgf.deviceinfo.utils.PermissionUtils;
 import com.anotherdgf.deviceinfo.utils.SystemUtils;
@@ -127,7 +124,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 break;
             case R.id.demo_dialogs:
                 toolbar.setTitle(R.string.nav_demo_widget);
-                addFragment(DialogsFragment.newInstance());
+                addFragment(WidgetsFragment.newInstance());
                 break;
         }
 

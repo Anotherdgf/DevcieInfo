@@ -104,7 +104,7 @@ public class MovementStateService extends Service implements SensorEventListener
             };
         }
         if (null != mTimerTask && null != mTimer){
-            mTimer.schedule(mTimerTask,5000,5000);
+            mTimer.schedule(mTimerTask,3600000,3600000);
         }
     }
 

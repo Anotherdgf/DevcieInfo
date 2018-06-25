@@ -35,6 +35,11 @@
     <string name="confirm">Confim</string>
     <string name="accessibilityService_msg">[Open the suspended window]Need to go to [accessibility] to open</string>
 
+    <!--widgets names-->
+    <string name="dialog_widgets">Dialogs</string>
+    <string name="recyclerview_widgets">RecyclerView</string>
+    <string name="lbs_amap">lbs_amap</string>
+
     <string name="permission_get_accounts_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_GET_ACCOUNTS</string>
     <string name="permission_read_phone_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_READ_PHONE_STATE</string>
     <string name="permission_call_phone_hint">Without this permission, this feature cannot be turned on. Please turn on the permission.PERMISSION_CALL_PHONE</string>
