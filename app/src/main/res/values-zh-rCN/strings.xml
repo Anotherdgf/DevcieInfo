@@ -36,6 +36,8 @@
     <string name="confirm">确定</string>
     <string name="accessibilityService_msg">【打开悬浮窗】需要去【辅助功能】开启</string>
 
+    <string name="empty_text">数据为空!</string>
+
     <!--widgets names-->
     <string name="dialog_widgets">Dialogs</string>
     <string name="recyclerview_widgets">RecyclerView</string>

@@ -35,6 +35,8 @@
     <string name="confirm">Confim</string>
     <string name="accessibilityService_msg">[Open the suspended window]Need to go to [accessibility] to open</string>
 
+    <string name="empty_text">NO DATA!</string>
+
     <!--widgets names-->
     <string name="dialog_widgets">Dialogs</string>
     <string name="recyclerview_widgets">RecyclerView</string>

@@ -5,6 +5,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.anotherdgf.deviceinfo.R;
+import com.anotherdgf.deviceinfo.fragment.RecyclerDemoFragment;
 import com.anotherdgf.deviceinfo.fragment.SettingsFragment;
 import com.gyf.barlibrary.ImmersionBar;
 
@@ -38,11 +39,7 @@ public class RecyclerViewActivity extends BaseActivity {
             }
         });
 
-//        getFragmentManager()
-//                .beginTransaction()
-//                .replace(R.id.fragment_container,new SettingsFragment())
-//                .commit();
-
+        addFragment(RecyclerDemoFragment.newInstance());
     }
 
     protected void setStatusBar() {
