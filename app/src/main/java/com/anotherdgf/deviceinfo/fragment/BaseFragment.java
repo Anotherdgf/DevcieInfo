@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.anotherdgf.deviceinfo.activity.BaseActivity;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * Created by DGF on 2018/4/17.
  */

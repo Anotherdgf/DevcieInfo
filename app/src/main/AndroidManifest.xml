@@ -84,7 +84,13 @@
 
         <service android:name=".service.MovementStateService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="false"/>
+
+        <service android:name=".service.NetworkStateService">
+            <intent-filter android:priority="1000">
+                <action android:name="com.smart.services.NetworkStateService" />
+            </intent-filter>
+        </service>
 
         <!-- 辅助服务广播接收器 -->
         <receiver android:name=".receiver.CurrentActivityServiceReceiver">
