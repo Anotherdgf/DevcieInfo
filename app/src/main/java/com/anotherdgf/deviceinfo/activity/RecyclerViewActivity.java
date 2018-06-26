@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.anotherdgf.deviceinfo.R;
 import com.anotherdgf.deviceinfo.fragment.RecyclerDemoFragment;
-import com.anotherdgf.deviceinfo.fragment.SettingsFragment;
 import com.anotherdgf.deviceinfo.service.NetworkStateService;
 import com.anotherdgf.deviceinfo.utils.EventUtil;
 import com.gyf.barlibrary.ImmersionBar;

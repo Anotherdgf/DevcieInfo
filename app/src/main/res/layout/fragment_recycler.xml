@@ -9,7 +9,7 @@
         android:id="@+id/recycler_view"/>
 
     <TextView
-        android:id="@+id/crime_set_empty_text_view"
+        android:id="@+id/empty_text_view"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:gravity="center"
