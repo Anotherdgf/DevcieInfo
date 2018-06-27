@@ -72,5 +72,5 @@
     <color name="app_red">#DB4437</color>
 
     <color name="current_layer_background">#55333333</color>
-
+    <color name="dark">#424242</color>
 </resources>

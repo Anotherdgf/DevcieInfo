@@ -2,6 +2,7 @@ package com.anotherdgf.deviceinfo.fragment;
 
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,6 +21,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by denggaofeng on 2018/6/25.
@@ -30,7 +32,11 @@ public class RecyclerDemoFragment extends BaseFragment{
 
     private RecyclerView recyclerView;
     private TextView mEmptyTextView;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private JokeAdapter mAdapter;
+
+    boolean isLoading;
+    private List<Map<String, Object>> data = new ArrayList<>();
 
     public static RecyclerDemoFragment newInstance() {
         return new RecyclerDemoFragment();
@@ -40,6 +46,7 @@ public class RecyclerDemoFragment extends BaseFragment{
     protected void initView(View view, Bundle savedInstanceState){
         mEmptyTextView = (TextView) view.findViewById(R.id.empty_text_view);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.SwipeRefreshLayout);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         updateUI();
     }

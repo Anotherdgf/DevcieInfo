@@ -37,6 +37,8 @@
 
     <string name="empty_text">NO DATA!</string>
     <string name="network_error">Network Error!</string>
+    <string name="loading">loading...</string>
+    <string name="notice">RecyclerView</string>
 
     <!--widgets names-->
     <string name="dialog_widgets">Dialogs</string>

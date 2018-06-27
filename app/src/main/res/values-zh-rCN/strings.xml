@@ -38,7 +38,7 @@
 
     <string name="empty_text">数据为空!</string>
     <string name="network_error">未连接网络!</string>
-
+    <string name="loading">加载中...</string>
     <!--widgets names-->
     <string name="dialog_widgets">Dialogs</string>
     <string name="recyclerview_widgets">RecyclerView</string>
